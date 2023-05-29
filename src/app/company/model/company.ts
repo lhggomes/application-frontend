@@ -4,7 +4,6 @@ export interface Company {
 
     id?: string,
     cnpj?:string,
-    name?:string,
     nomeFantasia?:string,
     cep?:string,
     suppliers?:Supplier[]
