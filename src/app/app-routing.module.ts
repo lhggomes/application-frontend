@@ -7,7 +7,7 @@ import { CreateCompanyComponent } from './company/componenets/create-company/cre
 import { CreateSupplierComponent } from './supplier/componenets/create-supplier/create-supplier.component';
 
 const routes: Routes = [
-  
+
   { path: '', component: HomeComponent },
   { path: 'company', component: ListCompanyComponent },
   { path: 'company/:id/edit', component: CreateCompanyComponent },
@@ -15,7 +15,6 @@ const routes: Routes = [
   { path: 'supplier', component: ListSupplierComponent },
   { path: 'supplier/:id/edit', component: CreateSupplierComponent },
   { path: 'supplier/create', component: CreateSupplierComponent }
-
 
 ];
 
