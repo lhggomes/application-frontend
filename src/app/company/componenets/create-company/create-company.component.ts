@@ -49,7 +49,7 @@ export class CreateCompanyComponent implements OnInit, OnDestroy{
   getCompany(id: string): void {
     this.companyService.getCompany(id)
       .subscribe(
-        (tarefa: Company) => this.showCompany(tarefa),
+        (company: Company) => this.showCompany(company),
         (error: any) => this.errorMessage = <any>error
       )
   }
@@ -70,9 +70,9 @@ export class CreateCompanyComponent implements OnInit, OnDestroy{
 
     this.companyForm.patchValue({
 
-      nomeFantasia: this.company.nomeFantasia,
+      nome: this.company.nomeFantasia,
       cnpj: this.company.cnpj,
-      cep: this.company.cnpj
+      cep: this.company.cep
     
     
     })
@@ -132,7 +132,7 @@ export class CreateCompanyComponent implements OnInit, OnDestroy{
     this.formMode = 'new';
     this.companyForm = this.fb.group({
       cnpj: ['', [Validators.required, Validators.maxLength(14)]],
-      nomeFantasia: ['', [Validators.required, Validators.maxLength(70)]],
+      nome: ['', [Validators.required, Validators.maxLength(70)]],
       cep: ['', [Validators.required, Validators.maxLength(10)]],
     })
 
