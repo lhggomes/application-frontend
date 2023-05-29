@@ -8,6 +8,7 @@ import { ListSupplierComponent } from './supplier/componenets/list-supplier/list
 import { CreateSupplierComponent } from './supplier/componenets/create-supplier/create-supplier.component';
 import { CreateCompanyComponent } from './company/componenets/create-company/create-company.component';
 import { ListCompanyComponent } from './company/componenets/list-company/list-company.component';
+import { HomeComponent } from './shared/components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ListCompanyComponent } from './company/componenets/list-company/list-co
     ListSupplierComponent,
     CreateSupplierComponent,
     CreateCompanyComponent,
-    ListCompanyComponent
+    ListCompanyComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
