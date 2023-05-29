@@ -140,6 +140,9 @@ export class CreateSupplierComponent implements OnInit, OnDestroy{
       nome: ['', [Validators.required, Validators.maxLength(70)]],
       cep: ['', [Validators.required, Validators.maxLength(10)]],
       rg: ['', [Validators.required, Validators.maxLength(10)]],
+      email: ['', [Validators.required, Validators.email]],
+      regType: ['', []],
+      birth: ['', []]
     })
 
     this.subscription = this.route.paramMap.subscribe(
