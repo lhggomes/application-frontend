@@ -73,7 +73,11 @@ export class CreateSupplierComponent implements OnInit, OnDestroy{
 
       nome: this.supplier.name,
       cnpj: this.supplier.cpfCnpj,
-      cep: this.supplier.cep
+      cep: this.supplier.cep,
+      rg: this.supplier.rg,
+      email: this.supplier.email,
+      birth: this.supplier.birthDate,
+      regType: this.supplier.type
     
     
     })
@@ -135,6 +139,7 @@ export class CreateSupplierComponent implements OnInit, OnDestroy{
       cnpj: ['', [Validators.required, Validators.maxLength(14)]],
       nome: ['', [Validators.required, Validators.maxLength(70)]],
       cep: ['', [Validators.required, Validators.maxLength(10)]],
+      rg: ['', [Validators.required, Validators.maxLength(10)]],
     })
 
     this.subscription = this.route.paramMap.subscribe(

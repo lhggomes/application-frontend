@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="nome" class="col-md-2 col-form-label">E-MAIL</label>
+                <label for="nome" class="col-md-2 col-form-label">E-mail</label>
                 <div class="col-md-7">
                     <input type="email" id="email" name="email" class="form-control" placeholder="email@email.com.br"
                        formControlName="email">
@@ -37,7 +37,7 @@
                 <label for="nome" class="col-md-2 col-form-label">Dt. Nascimento</label>
                 <div class="col-md-7">
                     <input type="date" id="birth" name="birth" class="form-control" 
-                       formControlName="cep">
+                       formControlName="birth">
                 </div>
             </div>
             <div class="form-group row">
@@ -50,10 +50,10 @@
             <div class="form-group row">
                 <label for="nome" class="col-md-2 col-form-label">Tipo Cadastro</label>
                <div class="col-md-7">
-                <select class="form-select" aria-label="Selecione uma opção de cadastro">
+                <select class="form-select" aria-label="Selecione uma opção de cadastro" formControlName="regType">
                     <option selected>Tipo de pessoa</option>
-                    <option value="1">JURIDICA</option>
-                    <option value="2">FISICA</option>
+                    <option value="JURIDICA">JURIDICA</option>
+                    <option value="FISICA">FISICA</option>
                   </select>
                </div>
             </div>
