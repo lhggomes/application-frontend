@@ -1,1 +1,55 @@
-<p>create-company works!</p>
+<div class="card">
+    <div class="card-header">
+        {{ pageTitle}}
+    </div>
+    <div class="card-body">
+
+        <form novalidate (ngSubmit)=save() [formGroup]="companyForm">
+            <div class="form-group row">
+                <label for="nome" class="col-md-2 col-form-label">Razão Social</label>
+                <div class="col-md-7">
+                    <input type="text" id="nome" name="nome" class="form-control"
+                        placeholder="Informe o nome da empresa" formControlName="nome">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="nome" class="col-md-2 col-form-label">CNPJ</label>
+                <div class="col-md-7">
+                    <input type="text" id="cnpj" name="cnpj" class="form-control" placeholder="Informe CNPJ"
+                        mask="000.000.000-00||00.000.000/0000-00" formControlName="cnpj">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="nome" class="col-md-2 col-form-label">CEP</label>
+                <div class="col-md-7">
+                    <input type="text" id="cep" name="cep" class="form-control" placeholder="Informe CEP"
+                        mask="00.000.000-00" formControlName="cep">
+                </div>
+            </div>
+            <div class="form-group row mb-2 mt-5">
+                <div class="offset-md-2 col-md-6">
+                    <button type="submit" class="btn btn-primary mr-2"
+                        [title]="companyForm.valid ? 'Salvar' : 'Desabilitado até que os dados estejam validos'"
+                        [disabled]="!companyForm.valid">
+                        Salvar
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary mr-2" title="Cancelar"
+                        [routerLink]="['/company']">
+                        Cancelar
+                    </button>
+                    <button type="button" class="btn btn-outline-danger mr-2" *ngIf="pageTitle != 'Adicionar Tarefa'"
+                        title="Excluir esta tarefa" (click)="deleteCompany()">
+                        Excluir
+                    </button>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<div class="alert alert-danger" *ngIf="errorMessage">
+    {{errorMessage}}
+
+</div>

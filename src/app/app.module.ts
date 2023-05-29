@@ -10,6 +10,7 @@ import { CreateCompanyComponent } from './company/componenets/create-company/cre
 import { ListCompanyComponent } from './company/componenets/list-company/list-company.component';
 import { HomeComponent } from './shared/components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

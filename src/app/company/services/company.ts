@@ -24,6 +24,48 @@ export class CompanyService {
   };
 
 
+  createCompany(company: Company) {
+    return this.http.post<Company>(this.urlApi, company, { headers: this.jsonHeaders });
+  }
+
+
+  getCompany(id: string): Observable<Company> {
+    if (id === '') {
+      return of(this.startBlankCompany());
+    }
+    const urlID = `${this.urlApi}/${id}`;
+    return this.http.get<Company>(urlID);
+
+  }
+
+  updateCompany(company: Company) {
+    const urlID = `${this.urlApi}/${company.id}`;
+    return this.http.put<Company>(urlID, company,
+      { headers: this.jsonHeaders }
+    );
+
+
+  }
+  deleteCompany(id: string) {
+    const urlID = `${this.urlApi}/${id}`;
+    return this.http.delete<Company>(urlID,
+      { headers: this.jsonHeaders }
+    );
+  }
+
+  private startBlankCompany(): Company {
+    return {
+      id: undefined,
+      cnpj: undefined,
+      nomeFantasia: undefined,
+      cep: undefined,
+    }
+  }
+
+
+
+
+
   private handleError(err: any) {
     let msgError: string;
 
