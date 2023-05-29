@@ -1,29 +1,28 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError, of, catchError } from 'rxjs';
-import { Supplier } from '../model/supplier';
+import { Company } from '../model/company';
 
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class SupplierService {
+export class CompanyService {
 
-  private urlApi = 'http://127.0.0.1:8080/api/supplier'
+  private urlApi = 'http://127.0.0.1:8080/api/company'
   private jsonHeaders = new HttpHeaders({ 'Content-Type': 'application/json' })
 
   constructor(private http: HttpClient) { }
 
-  getSuppliers(): Observable<Supplier[]> {
+  
+  getCompanies(): Observable<Company[]> {
 
-    const response = this.http.get<Supplier[]>(this.urlApi);
+    const response = this.http.get<Company[]>(this.urlApi);
     return response;
 
   };
 
-
-  
 
   private handleError(err: any) {
     let msgError: string;

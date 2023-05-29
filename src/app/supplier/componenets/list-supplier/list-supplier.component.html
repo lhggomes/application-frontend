@@ -1,1 +1,67 @@
-<p>list-supplier works!</p>
+<div class="card">
+    <div class="card-header">
+
+        <div class="d-flex justify-content-between">
+            <div>
+                <strong>Fornecedores Cadastrados</strong>
+            </div>
+
+            <div>
+                <button class="btn btn-primary"
+                [routerLink]="['/company/create']">
+                <i class="fa fa-plus"></i>
+                    Novo Fornecedor
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped mb-0">
+            <thead>
+                <tr>
+                    <th>CNPJ / CPF</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>CEP</th>
+                    <th>Tipo Cadastro</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let supplier of suppliers">
+                    <td>
+                        {{ supplier.cpfCnpj}}
+                    </td>
+                    <td>
+                        {{ supplier.name}}
+                    </td>
+                    <td>
+                        {{ supplier.email}}
+                    </td>
+                    <td>
+                        {{ supplier.cep}}
+                    </td>
+                    <td>
+                        {{ supplier.type}}
+                    </td>
+                    <td>
+                        <button class="btn btn-outline-success btn-sm" 
+                        style="margin-right: 3% !important"
+                        [routerLink]="['/tarefas', supplier.id, 'editar']">
+                            <b class="fa fa-edit"></b>
+                        </button>
+
+                        <button class="btn btn-outline-danger btn-sm" 
+                        [routerLink]="['/tarefas', supplier.id, 'editar']">
+                            <b class="fa fa-trash"></b>
+                        </button>
+
+
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

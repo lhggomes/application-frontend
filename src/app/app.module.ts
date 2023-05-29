@@ -9,6 +9,7 @@ import { CreateSupplierComponent } from './supplier/componenets/create-supplier/
 import { CreateCompanyComponent } from './company/componenets/create-company/create-company.component';
 import { ListCompanyComponent } from './company/componenets/list-company/list-company.component';
 import { HomeComponent } from './shared/components/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HomeComponent } from './shared/components/home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

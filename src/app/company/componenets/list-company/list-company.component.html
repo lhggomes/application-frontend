@@ -1,1 +1,62 @@
-<p>list-company works!</p>
+<div class="card">
+    <div class="card-header">
+
+        <div class="d-flex justify-content-between">
+            <div>
+                <strong>Empresas Cadastradas</strong>
+            </div>
+
+            <div>
+                <button class="btn btn-primary"
+                [routerLink]="['/company/create']">
+                <i class="fa fa-plus"></i>
+                    Nova Empresa
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped mb-0">
+            <thead>
+                <tr>
+                    <th>CNPJ</th>
+                    <th>Nome Fantasia</th>
+                    <th>CEP</th>
+                    <th>Num. Fornecedores</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let company of companies">
+                    <td>
+                        {{ company.cnpj}}
+                    </td>
+                    <td>
+                        {{ company.nomeFantasia}}
+                    </td>
+                    <td>
+                        {{ company.cep}}
+                    </td>
+                    <td>
+                        {{ company.suppliers?.length}}
+                    </td>
+                    <td>
+                        <button class="btn btn-outline-success btn-sm" 
+                        style="margin-right: 3% !important"
+                        [routerLink]="['/tarefas', company.id, 'editar']">
+                            <b class="fa fa-edit"></b>
+                        </button>
+
+                        <button class="btn btn-outline-danger btn-sm" 
+                        [routerLink]="['/tarefas', company.id, 'editar']">
+                            <b class="fa fa-trash"></b>
+                        </button>
+
+
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
