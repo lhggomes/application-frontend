@@ -48,12 +48,14 @@
                 </div>
             </div>
             <div class="form-group row">
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                <label for="nome" class="col-md-2 col-form-label">Tipo Cadastro</label>
+               <div class="col-md-7">
+                <select class="form-select" aria-label="Selecione uma opção de cadastro">
+                    <option selected>Tipo de pessoa</option>
+                    <option value="1">JURIDICA</option>
+                    <option value="2">FISICA</option>
                   </select>
+               </div>
             </div>
             <div class="form-group row mb-2 mt-5">
                 <div class="offset-md-2 col-md-6">
@@ -66,7 +68,7 @@
                         [routerLink]="['/supplier']">
                         Cancelar
                     </button>
-                    <button type="button" class="btn btn-outline-danger mr-2" *ngIf="pageTitle != 'Adicionar Tarefa'"
+                    <button type="button" class="btn btn-outline-danger mr-2" *ngIf="pageTitle != 'Adicionar Fornecedor'"
                         title="Excluir esta tarefa" (click)="deleteSupplier()">
                         Excluir
                     </button>
