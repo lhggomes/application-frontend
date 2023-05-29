@@ -124,7 +124,7 @@ export class CreateCompanyComponent implements OnInit, OnDestroy{
   onSaveComplete(): void {
 
     this.companyForm.reset();
-    this.router.navigate(['/tarefas']);
+    this.router.navigate(['/company']);
 
   }
 
